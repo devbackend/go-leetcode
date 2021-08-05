@@ -39,9 +39,7 @@ func Reverse(x int) int {
 	right := len(chars) - 1
 
 	for right > left {
-		tmp := chars[right]
-		chars[right] = chars[left]
-		chars[left] = tmp
+		chars[right], chars[left] = chars[left], chars[right]
 
 		left++
 		right--

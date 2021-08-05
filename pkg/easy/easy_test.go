@@ -41,8 +41,6 @@ func TestTwoSum(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		c := c // scopelint mute
-
 		if c.name == "" {
 			t.Errorf("test case name required!")
 			continue
@@ -95,8 +93,6 @@ func TestReverse(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		c := c // scopelint mute
-
 		if c.name == "" {
 			t.Errorf("test case name required!")
 			continue

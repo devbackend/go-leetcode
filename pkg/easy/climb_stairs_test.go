@@ -1,8 +1,9 @@
-package easy
+package easy_test
 
 import (
 	"testing"
 
+	"github.com/devbackend/go-leetcode/pkg/easy"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -24,15 +25,13 @@ func TestClimbStairs(t *testing.T) {
 		},
 	}
 	for _, c := range cases {
-		c := c // scopelint mute
-
 		if c.name == "" {
 			t.Errorf("test case name required!")
 			continue
 		}
 
 		t.Run(c.name, func(t *testing.T) {
-			actual := ClimbStairs(c.stairs)
+			actual := easy.ClimbStairs(c.stairs)
 
 			assert.Equal(t, c.expected, actual)
 		})
