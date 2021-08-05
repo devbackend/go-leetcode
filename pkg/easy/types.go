@@ -6,3 +6,4 @@ type ListNode struct {
 }
 
 var climbStairsCache = make(map[int]int)
+var fibCache = map[int]int{}
