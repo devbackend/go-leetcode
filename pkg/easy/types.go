@@ -18,3 +18,9 @@ var romanNumbers = map[byte]int{
 	'D': 500,
 	'M': 1000,
 }
+
+var parenthesesClosers = map[byte]byte{
+	'}': '{',
+	']': '[',
+	')': '(',
+}
