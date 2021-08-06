@@ -23,7 +23,7 @@ func RomanToInt(s string) int {
 			left = right + 1
 		} else {
 			res += leftNum
-			left += 1
+			left++
 		}
 	}
 

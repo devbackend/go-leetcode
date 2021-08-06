@@ -2,13 +2,14 @@ package easy
 
 func LongestCommonPrefix(strs []string) string {
 	var res string
+
 	var ix int
 
 	if len(strs) < 2 {
 		return strs[0]
 	}
 
-	chars := make([][]byte, len(strs), len(strs))
+	chars := make([][]byte, len(strs))
 
 	for k, v := range strs {
 		chars[k] = []byte(v)
@@ -20,6 +21,7 @@ func LongestCommonPrefix(strs []string) string {
 		}
 
 		char := chars[0][ix]
+
 		for _, v := range chars {
 			if ix >= len(v) {
 				return res
