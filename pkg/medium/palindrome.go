@@ -19,6 +19,7 @@ func LongestPalindrome(s string) string {
 			r := len(chars) - 1
 
 			isPalindrome := true
+
 			for r > l {
 				if chars[l] != chars[r] {
 					isPalindrome = false
