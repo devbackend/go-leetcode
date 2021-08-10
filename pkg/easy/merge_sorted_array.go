@@ -6,14 +6,6 @@ func Merge(nums1 []int, m int, nums2 []int, n int) {
 		return
 	}
 
-	if m == 0 {
-		for k, v := range nums2 {
-			nums1[k] = v
-		}
-
-		return
-	}
-
 	var first, second int
 
 	for second < len(nums2) {
@@ -21,6 +13,7 @@ func Merge(nums1 []int, m int, nums2 []int, n int) {
 			nums1[first] = nums2[second]
 			first++
 			second++
+
 			continue
 		}
 
