@@ -10,4 +10,5 @@ test:
 
 test-coverage:
 	go clean -testcache
-	go test -cover ./... --race
+	go test ./... --race -coverprofile cover.out
+	go tool cover -func cover.out
