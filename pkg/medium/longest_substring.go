@@ -7,28 +7,23 @@ func LengthOfLongestSubstring(s string) int {
 		return len(s)
 	}
 
-	var rights int
+	var right int
 
 	chars := []byte(s)
 	left := 0
 	max := 1
 
-	for left < len(s) {
-		uniqueChars := map[byte]struct{}{
-			chars[left]: {},
+	uniqueChars := map[byte]int{}
+
+	for right < len(s) {
+		if pos, ok := uniqueChars[chars[right]]; ok && pos >= left {
+			left = pos + 1
 		}
 
-		rights = left + 1
-		for rights < len(s) {
-			if _, ok := uniqueChars[chars[rights]]; ok {
-				break
-			}
-
-			uniqueChars[chars[rights]] = struct{}{}
-			rights++
-			max = int(math.Max(float64(max), float64(rights-left)))
-		}
-		left++
+		uniqueChars[chars[left]] = left
+		uniqueChars[chars[right]] = right
+		right++
+		max = int(math.Max(float64(max), float64(right-left)))
 	}
 
 	return max

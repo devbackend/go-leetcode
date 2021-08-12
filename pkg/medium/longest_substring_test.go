@@ -43,6 +43,21 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 			str:      "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz 0123456789 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",
 			expected: 37,
 		},
+		{
+			name:     "example 7",
+			str:      "abc",
+			expected: 3,
+		},
+		{
+			name:     "example 8",
+			str:      "abcad",
+			expected: 4,
+		},
+		{
+			name:     "example 9",
+			str:      "abcccccca",
+			expected: 3,
+		},
 	}
 	for _, c := range cases {
 		if c.name == "" {
