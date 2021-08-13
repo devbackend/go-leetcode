@@ -1,7 +1,5 @@
 package medium
 
-import "math"
-
 func LengthOfLongestSubstring(s string) int {
 	if len(s) < 2 {
 		return len(s)
@@ -23,7 +21,11 @@ func LengthOfLongestSubstring(s string) int {
 		uniqueChars[chars[left]] = left
 		uniqueChars[chars[right]] = right
 		right++
-		max = int(math.Max(float64(max), float64(right-left)))
+
+		diff := right - left
+		if diff > max {
+			max = diff
+		}
 	}
 
 	return max
