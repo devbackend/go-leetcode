@@ -41,6 +41,16 @@ func TestMaxArea(t *testing.T) {
 				return res
 			}(),
 		},
+		{
+			name:     "example 5",
+			heights:  []int{2, 2},
+			expected: 2,
+		},
+		{
+			name:     "example 6",
+			heights:  []int{2, 0, 2, 1},
+			expected: 4,
+		},
 	}
 	for _, c := range cases {
 		if c.name == "" {
