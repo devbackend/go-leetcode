@@ -5,22 +5,6 @@ import (
 	"strconv"
 )
 
-// TwoSum for https://leetcode.com/problems/two-sum/
-func TwoSum(nums []int, target int) []int {
-	tmp := map[int]int{}
-
-	for k, v := range nums {
-		if res, ok := tmp[v]; ok {
-			return []int{res, k}
-		}
-
-		key := target - v
-		tmp[key] = k
-	}
-
-	return []int{}
-}
-
 // Reverse for https://leetcode.com/problems/reverse-integer/
 func Reverse(x int) int {
 	if -10 < x && x < 10 {
