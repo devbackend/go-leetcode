@@ -1,9 +1,13 @@
 package easy
 
-import "strconv"
+import (
+	"regexp"
+	"strconv"
+	"strings"
+)
 
-// IsPalindrome for https://leetcode.com/problems/palindrome-linked-list/
-func IsPalindrome(x int) bool {
+// IsPalindromeNumber for https://leetcode.com/problems/palindrome-linked-list/
+func IsPalindromeNumber(x int) bool {
 	if 0 <= x && x <= 9 {
 		return true
 	}
@@ -15,6 +19,26 @@ func IsPalindrome(x int) bool {
 
 	for right > left {
 		if chars[left] != chars[right] {
+			return false
+		}
+
+		left++
+		right--
+	}
+
+	return true
+}
+
+// IsPalindromeString for https://leetcode.com/problems/valid-palindrome/
+func IsPalindromeString(s string) bool {
+	re := regexp.MustCompile("[a-z0-9]")
+	match := re.FindAllStringSubmatch(strings.ToLower(s), -1)
+
+	left := 0
+	right := len(match) - 1
+
+	for left < right {
+		if match[left][0] != match[right][0] {
 			return false
 		}
 
