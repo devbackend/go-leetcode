@@ -44,7 +44,7 @@ func TestGroupAnagrams(t *testing.T) {
 		t.Run(c.name, func(t *testing.T) {
 			actual := medium.GroupAnagrams(c.input)
 
-			assert.Equal(t, c.expected, actual)
+			assert.ElementsMatch(t, c.expected, actual)
 		})
 	}
 }

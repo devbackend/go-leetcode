@@ -1,7 +1,6 @@
 package easy_test
 
 import (
-	"sort"
 	"testing"
 
 	"github.com/devbackend/go-leetcode/pkg/easy"
@@ -67,10 +66,7 @@ func TestBinaryTreePaths(t *testing.T) {
 		t.Run(c.name, func(t *testing.T) {
 			actual := easy.BinaryTreePaths(c.root)
 
-			sort.Strings(actual)
-			sort.Strings(c.expected)
-
-			assert.Equal(t, c.expected, actual)
+			assert.ElementsMatch(t, c.expected, actual)
 		})
 	}
 }
