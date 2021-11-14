@@ -8,6 +8,9 @@ test:
 	go clean -testcache
 	go test ./... --race
 
+bench:
+	go test -bench=. ./...
+
 test-coverage:
 	go clean -testcache
 	go test ./... --race -coverprofile cover.out
