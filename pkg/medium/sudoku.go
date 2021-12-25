@@ -31,16 +31,19 @@ func IsValidSudoku(board [][]byte) bool {
 			if _, ok := horizontal[k][val]; ok {
 				return false
 			}
+
 			horizontal[k][val] = struct{}{}
 
 			if _, ok := vertical[i][val]; ok {
 				return false
 			}
+
 			vertical[i][val] = struct{}{}
 
 			if _, ok := trinity[trinityPos][val]; ok {
 				return false
 			}
+
 			trinity[trinityPos][val] = struct{}{}
 		}
 	}
