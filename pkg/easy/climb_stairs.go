@@ -2,19 +2,16 @@ package easy
 
 // ClimbStairs for https://leetcode.com/problems/climbing-stairs
 func ClimbStairs(n int) int {
-	if n < 3 {
-		return n
+	if n == 1 {
+		return 1
 	}
 
-	restOneStep := n - 1
-	if _, ok := climbStairsCache[restOneStep]; !ok {
-		climbStairsCache[restOneStep] = ClimbStairs(restOneStep)
+	n1 := 1
+	n2 := 2
+
+	for i := 3; i < n+1; i++ {
+		n1, n2 = n2, n1+n2
 	}
 
-	restTwoStep := n - 2
-	if _, ok := climbStairsCache[restTwoStep]; !ok {
-		climbStairsCache[restTwoStep] = ClimbStairs(restTwoStep)
-	}
-
-	return climbStairsCache[restOneStep] + climbStairsCache[restTwoStep]
+	return n2
 }

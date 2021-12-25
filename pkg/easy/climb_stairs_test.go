@@ -23,6 +23,21 @@ func TestClimbStairs(t *testing.T) {
 			stairs:   3,
 			expected: 3,
 		},
+		{
+			name:     "Example 3",
+			stairs:   4,
+			expected: 5,
+		},
+		{
+			name:     "Example 4",
+			stairs:   5,
+			expected: 8,
+		},
+		{
+			name:     "Example 5",
+			stairs:   42,
+			expected: 433494437,
+		},
 	}
 	for _, c := range cases {
 		if c.name == "" {

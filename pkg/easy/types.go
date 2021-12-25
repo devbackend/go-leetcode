@@ -5,8 +5,6 @@ type ListNode struct {
 	Next *ListNode
 }
 
-var climbStairsCache = make(map[int]int)
-
 var fibCache = map[int]int{}
 
 var romanNumbers = map[byte]int{
