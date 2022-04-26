@@ -10,7 +10,7 @@ stages:
 Linters:
   extends: .go-cache
   stage: test
-  image: golang:1.14
+  image: golang:1.17
   script:
     - make lint-install
     - make lint
@@ -20,7 +20,7 @@ Linters:
 Tests:
   extends: .go-cache
   stage: test
-  image: golang:1.14
+  image: golang:1.17
   script:
     - make test
   tags:
@@ -29,7 +29,7 @@ Tests:
 Coverage:
   extends: .go-cache
   stage: test
-  image: golang:1.14
+  image: golang:1.17
   script:
     - make test-coverage
   tags:
