@@ -1,6 +1,10 @@
 Solutions for LeetCode problems
 ==
 
-[![pipeline status](https://gitlab.com/devbackend/go-leetcode/badges/master/pipeline.svg)](https://gitlab.com/devbackend/go-leetcode/-/pipelines) [![coverage report](https://gitlab.com/devbackend/go-leetcode/badges/master/coverage.svg)](https://gitlab.com/devbackend/go-leetcode/-/pipelines)
+### Profile - https://leetcode.com/devbackend/
 
-Profile - https://leetcode.com/devbackend/
+---
+
+- [x] [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
+---
