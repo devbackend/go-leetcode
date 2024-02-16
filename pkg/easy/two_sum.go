@@ -1,21 +1,5 @@
 package easy
 
-// TwoSum for https://leetcode.com/problems/two-sum/
-func TwoSum(nums []int, target int) []int {
-	tmp := map[int]int{}
-
-	for k, v := range nums {
-		if res, ok := tmp[v]; ok {
-			return []int{res, k}
-		}
-
-		key := target - v
-		tmp[key] = k
-	}
-
-	return []int{}
-}
-
 // TwoSumSorted for https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 func TwoSumSorted(numbers []int, target int) []int {
 	nums := map[int]int{}
