@@ -1,20 +1,19 @@
-package medium_test
+package problems
 
 import (
 	"testing"
 
-	"github.com/devbackend/go-leetcode/pkg/medium"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
-func TestIsValidSudoku(t *testing.T) {
-	cases := []struct {
-		name     string
-		board    [][]byte
+func TestProblem_isValidSudoku(t *testing.T) {
+	t.Parallel()
+
+	testCases := map[string]struct {
 		expected bool
+		board    [][]byte
 	}{
-		{
-			name:     "example 1",
+		"example 1": {
 			expected: true,
 			board: [][]byte{
 				{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -28,8 +27,7 @@ func TestIsValidSudoku(t *testing.T) {
 				{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
 			},
 		},
-		{
-			name:     "example 2",
+		"example 2": {
 			expected: false,
 			board: [][]byte{
 				{'8', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -43,8 +41,7 @@ func TestIsValidSudoku(t *testing.T) {
 				{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
 			},
 		},
-		{
-			name:     "example 3",
+		"example 3": {
 			expected: false,
 			board: [][]byte{
 				{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -59,15 +56,9 @@ func TestIsValidSudoku(t *testing.T) {
 			},
 		},
 	}
-	for _, c := range cases {
-		if c.name == "" {
-			t.Errorf("test case name required!")
-			continue
-		}
-
-		t.Run(c.name, func(t *testing.T) {
-			actual := medium.IsValidSudoku(c.board)
-			assert.Equal(t, c.expected, actual)
+	for name, tc := range testCases {
+		t.Run(name, func(t *testing.T) {
+			require.Equal(t, tc.expected, isValidSudoku(tc.board))
 		})
 	}
 }
